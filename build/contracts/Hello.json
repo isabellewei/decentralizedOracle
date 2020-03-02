@@ -1,0 +1,2134 @@
+{
+  "contractName": "Hello",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "prop1",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "prop2",
+          "type": "string"
+        }
+      ],
+      "name": "createSubmission",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getPropNum",
+      "outputs": [
+        {
+          "internalType": "contract Submission",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"prop1\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"prop2\",\"type\":\"string\"}],\"name\":\"createSubmission\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getPropNum\",\"outputs\":[{\"internalType\":\"contract Submission\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/isabellewei/th/contracts/Hello.sol\":\"Hello\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/isabellewei/th/contracts/Hello.sol\":{\"keccak256\":\"0xc6460c6cb7165e0e94f943fc41d4625cceadcab9ba5377cbfbf7243178f25aea\",\"urls\":[\"bzz-raw://4965fda5177c4b5ae5a90f5de888ad1cca087e5d580f204df399f295d25d9c27\",\"dweb:/ipfs/QmP2mxaVFbKLjV5oS6tqwizh2xfV28R7RnDH4Gy8CWHdwS\"]},\"/Users/isabellewei/th/contracts/Submission.sol\":{\"keccak256\":\"0xac6d64fd1d011fad4d44f98101b0ff4dcbad455f1f0436882b51482ac10ccc8c\",\"urls\":[\"bzz-raw://1f4ae30178f3ecd27bf7842e93700f96d5168f3a5a1e7d0af29cc4d47b20341b\",\"dweb:/ipfs/QmNe5n49o3JDQCUxWqZS6n34PFwkV58dSsDtnwm1Er8T1o\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061101f806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80636053e9e51461003b578063f987e5de1461018d575b600080fd5b61018b6004803603604081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460018302840111640100000000831117156100a257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561010557600080fd5b82018360208201111561011757600080fd5b8035906020019184600183028401116401000000008311171561013957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101e4565b005b61019561038d565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018260ff1660ff1681526020019250505060405180910390f35b60008282336040516101f590610565565b8080602001806020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838103835286818151815260200191508051906020019080838360005b8381101561026857808201518184015260208101905061024d565b50505050905090810190601f1680156102955780820380516001836020036101000a031916815260200191505b50838103825285818151815260200191508051906020019080838360005b838110156102ce5780820151818401526020810190506102b3565b50505050905090810190601f1680156102fb5780820380516001836020036101000a031916815260200191505b5095505050505050604051809103906000f08015801561031f573d6000803e3d6000fd5b50905060008190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050505050565b60008060008090505b6000805490508110156104f25760008082815481106103b157fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663bc9cdc3a336040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b15801561045857600080fd5b505afa15801561046c573d6000803e3d6000fd5b505050506040513d602081101561048257600080fd5b8101908080519060200190929190505050905060008160ff16146104e457600082815481106104ad57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681935093505050610561565b508080600101915050610396565b506040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f4e6f2076616c69642070726f706f736974696f6e206578697374732e0000000081525060200191505060405180910390fd5b9091565b610a78806105738339019056fe608060405234801561001057600080fd5b50604051610a78380380610a788339818101604052606081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b8382019150602082018581111561006957600080fd5b825186600182028301116401000000008211171561008657600080fd5b8083526020830192505050908051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b506040526020018051604051939291908464010000000082111561010a57600080fd5b8382019150602082018581111561012057600080fd5b825186600182028301116401000000008211171561013d57600080fd5b8083526020830192505050908051906020019080838360005b83811015610171578082015181840152602081019050610156565b50505050905090810190601f16801561019e5780820380516001836020036101000a031916815260200191505b50604052602001805190602001909291905050506040518060400160405280600160ff16815260200184815250600160008201518160000160006101000a81548160ff021916908360ff160217905550602082015181600101908051906020019061020a9291906102b2565b509050506040518060400160405280600260ff16815260200183815250600460008201518160000160006101000a81548160ff021916908360ff16021790555060208201518160010190805190602001906102669291906102b2565b50905050806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050610357565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102f357805160ff1916838001178555610321565b82800160010185558215610321579182015b82811115610320578251825591602001919060010190610305565b5b50905061032e9190610332565b5090565b61035491905b80821115610350576000816000905550600101610338565b5090565b90565b610712806103666000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80632808241e146100465780638d9dbc1414610083578063bc9cdc3a1461012d575b600080fd5b6100816004803603604081101561005c57600080fd5b81019080803560ff16906020019092919080351515906020019092919050505061018b565b005b6100b26004803603602081101561009957600080fd5b81019080803560ff1690602001909291905050506103a6565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f25780820151818401526020810190506100d7565b50505050905090810190601f16801561011f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61016f6004803603602081101561014357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105c9565b604051808260ff1660ff16815260200191505060405180910390f35b600160000160009054906101000a900460ff1660ff168260ff1614806101c85750600460000160009054906101000a900460ff1660ff168260ff16145b61021d576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806106b86026913960400191505060405180910390fd5b600160000160009054906101000a900460ff1660ff168260ff1614156102e1576040518060400160405280821515815260200160011515815250600160020160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548160ff02191690831515021790555060208201518160000160016101000a81548160ff0219169083151502179055509050506103a2565b600460000160009054906101000a900460ff1660ff168260ff1614156103a1576040518060400160405280821515815260200160011515815250600460020160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548160ff02191690831515021790555060208201518160000160016101000a81548160ff0219169083151502179055509050505b5b5050565b6060600160000160009054906101000a900460ff1660ff168260ff1614806103e55750600460000160009054906101000a900460ff1660ff168260ff16145b61043a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806106b86026913960400191505060405180910390fd5b600160000160009054906101000a900460ff1660ff168260ff1614156104fe57600180018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104f25780601f106104c7576101008083540402835291602001916104f2565b820191906000526020600020905b8154815290600101906020018083116104d557829003601f168201915b505050505090506105c4565b600460000160009054906101000a900460ff1660ff168260ff1614156105c35760046001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105b75780601f1061058c576101008083540402835291602001916105b7565b820191906000526020600020905b81548152906001019060200180831161059a57829003601f168201915b505050505090506105c4565b5b919050565b6000600160020160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160019054906101000a900460ff1661063c57600160000160009054906101000a900460ff1690506106b2565b600460020160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160019054906101000a900460ff166106ad57600460000160009054906101000a900460ff1690506106b2565b600090505b91905056fe54686973206973206e6f7420612076616c69642070726f706f736974696f6e206e756d626572a265627a7a72315820793f5b73f7b812fc7d6aa3750cc9ad36e89ae1ed6c27937b85523cbbe91f3b8a64736f6c634300050c0032a265627a7a723158207d985c461b4242f07feea119c9317fd2d0f94a245b2100f66e61e06b2a2d14a564736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80636053e9e51461003b578063f987e5de1461018d575b600080fd5b61018b6004803603604081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460018302840111640100000000831117156100a257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561010557600080fd5b82018360208201111561011757600080fd5b8035906020019184600183028401116401000000008311171561013957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506101e4565b005b61019561038d565b604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018260ff1660ff1681526020019250505060405180910390f35b60008282336040516101f590610565565b8080602001806020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838103835286818151815260200191508051906020019080838360005b8381101561026857808201518184015260208101905061024d565b50505050905090810190601f1680156102955780820380516001836020036101000a031916815260200191505b50838103825285818151815260200191508051906020019080838360005b838110156102ce5780820151818401526020810190506102b3565b50505050905090810190601f1680156102fb5780820380516001836020036101000a031916815260200191505b5095505050505050604051809103906000f08015801561031f573d6000803e3d6000fd5b50905060008190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050505050565b60008060008090505b6000805490508110156104f25760008082815481106103b157fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663bc9cdc3a336040518263ffffffff1660e01b8152600401808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060206040518083038186803b15801561045857600080fd5b505afa15801561046c573d6000803e3d6000fd5b505050506040513d602081101561048257600080fd5b8101908080519060200190929190505050905060008160ff16146104e457600082815481106104ad57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681935093505050610561565b508080600101915050610396565b506040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f4e6f2076616c69642070726f706f736974696f6e206578697374732e0000000081525060200191505060405180910390fd5b9091565b610a78806105738339019056fe608060405234801561001057600080fd5b50604051610a78380380610a788339818101604052606081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b8382019150602082018581111561006957600080fd5b825186600182028301116401000000008211171561008657600080fd5b8083526020830192505050908051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b506040526020018051604051939291908464010000000082111561010a57600080fd5b8382019150602082018581111561012057600080fd5b825186600182028301116401000000008211171561013d57600080fd5b8083526020830192505050908051906020019080838360005b83811015610171578082015181840152602081019050610156565b50505050905090810190601f16801561019e5780820380516001836020036101000a031916815260200191505b50604052602001805190602001909291905050506040518060400160405280600160ff16815260200184815250600160008201518160000160006101000a81548160ff021916908360ff160217905550602082015181600101908051906020019061020a9291906102b2565b509050506040518060400160405280600260ff16815260200183815250600460008201518160000160006101000a81548160ff021916908360ff16021790555060208201518160010190805190602001906102669291906102b2565b50905050806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050610357565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106102f357805160ff1916838001178555610321565b82800160010185558215610321579182015b82811115610320578251825591602001919060010190610305565b5b50905061032e9190610332565b5090565b61035491905b80821115610350576000816000905550600101610338565b5090565b90565b610712806103666000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80632808241e146100465780638d9dbc1414610083578063bc9cdc3a1461012d575b600080fd5b6100816004803603604081101561005c57600080fd5b81019080803560ff16906020019092919080351515906020019092919050505061018b565b005b6100b26004803603602081101561009957600080fd5b81019080803560ff1690602001909291905050506103a6565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100f25780820151818401526020810190506100d7565b50505050905090810190601f16801561011f5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61016f6004803603602081101561014357600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105c9565b604051808260ff1660ff16815260200191505060405180910390f35b600160000160009054906101000a900460ff1660ff168260ff1614806101c85750600460000160009054906101000a900460ff1660ff168260ff16145b61021d576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806106b86026913960400191505060405180910390fd5b600160000160009054906101000a900460ff1660ff168260ff1614156102e1576040518060400160405280821515815260200160011515815250600160020160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548160ff02191690831515021790555060208201518160000160016101000a81548160ff0219169083151502179055509050506103a2565b600460000160009054906101000a900460ff1660ff168260ff1614156103a1576040518060400160405280821515815260200160011515815250600460020160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548160ff02191690831515021790555060208201518160000160016101000a81548160ff0219169083151502179055509050505b5b5050565b6060600160000160009054906101000a900460ff1660ff168260ff1614806103e55750600460000160009054906101000a900460ff1660ff168260ff16145b61043a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806106b86026913960400191505060405180910390fd5b600160000160009054906101000a900460ff1660ff168260ff1614156104fe57600180018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104f25780601f106104c7576101008083540402835291602001916104f2565b820191906000526020600020905b8154815290600101906020018083116104d557829003601f168201915b505050505090506105c4565b600460000160009054906101000a900460ff1660ff168260ff1614156105c35760046001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105b75780601f1061058c576101008083540402835291602001916105b7565b820191906000526020600020905b81548152906001019060200180831161059a57829003601f168201915b505050505090506105c4565b5b919050565b6000600160020160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160019054906101000a900460ff1661063c57600160000160009054906101000a900460ff1690506106b2565b600460020160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160019054906101000a900460ff166106ad57600460000160009054906101000a900460ff1690506106b2565b600090505b91905056fe54686973206973206e6f7420612076616c69642070726f706f736974696f6e206e756d626572a265627a7a72315820793f5b73f7b812fc7d6aa3750cc9ad36e89ae1ed6c27937b85523cbbe91f3b8a64736f6c634300050c0032a265627a7a723158207d985c461b4242f07feea119c9317fd2d0f94a245b2100f66e61e06b2a2d14a564736f6c634300050c0032",
+  "sourceMap": "62:1065:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:1065:0;;;;;;;",
+  "deployedSourceMap": "62:1065:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:1065:0;;;;;;;;;;;;;;;;;;;;;;;;114:199;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;114:199:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;114:199:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;114:199:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;114:199:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;114:199:0;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;114:199:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;114:199:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;114:199:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;114:199:0;;;;;;;;;;;;;;;:::i;:::-;;530:594;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;114:199;198:24;240:5;247;254:10;225:40;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;225:40:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;225:40:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;225:40:0;198:67;;275:11;292:13;275:31;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;275:31:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;114:199;;;:::o;530:594::-;572:10;584:5;778:6;787:1;778:10;;773:226;794:11;:18;;;;790:1;:22;773:226;;;832:10;856:11;868:1;856:14;;;;;;;;;;;;;;;;;;;;;;;;;845:42;;;888:10;845:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;845:54:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;845:54:0;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;845:54:0;;;;;;;;;;;;;;;;832:67;;925:1;917:4;:9;;;914:75;;953:11;965:1;953:14;;;;;;;;;;;;;;;;;;;;;;;;;969:4;945:29;;;;;;;;914:75;773:226;814:3;;;;;;;773:226;;;;1008:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;530:594;;;:::o;62:1065::-;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.21 <0.7.0;\n\nimport \"./Submission.sol\";\n\ncontract Hello {\n    Submission[] submissions;\n\n    function createSubmission(string memory prop1, string memory prop2) public{\n        Submission newSubmission = new Submission(prop1, prop2, msg.sender);\n        submissions.push(newSubmission);\n    } \n\n    // function getGreeting() public view returns(string memory) {\n    //     return greeting;\n    // }\n\n    // function setGreeting(string memory _greeting) public {\n    //     greeting = _greeting;\n    // }\n\n    function getPropNum() public view returns(Submission, uint8) {\n        // take bond value??\n        // Using address of user, pick a random proposition they have not yet voted for\n        // Return error if no such proposition exists\n\n        for (uint i = 0; i < submissions.length; i++){\n            uint8 prop = Submission(submissions[i]).getValidPropNum(msg.sender);\n\n            if(prop != 0){\n                return (submissions[i], prop);\n            }\n        }\n        revert(\"No valid proposition exists.\");\n        // return Submission(submissions[submissions.length-1]).prop1;\n    }\n\n}",
+  "sourcePath": "/Users/isabellewei/th/contracts/Hello.sol",
+  "ast": {
+    "absolutePath": "/Users/isabellewei/th/contracts/Hello.sol",
+    "exportedSymbols": {
+      "Hello": [
+        78
+      ]
+    },
+    "id": 79,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:0"
+      },
+      {
+        "absolutePath": "/Users/isabellewei/th/contracts/Submission.sol",
+        "file": "./Submission.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 79,
+        "sourceUnit": 296,
+        "src": "34:26:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          295
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 78,
+        "linearizedBaseContracts": [
+          78
+        ],
+        "name": "Hello",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5,
+            "name": "submissions",
+            "nodeType": "VariableDeclaration",
+            "scope": 78,
+            "src": "83:24:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+              "typeString": "contract Submission[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 3,
+                "name": "Submission",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 295,
+                "src": "83:10:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Submission_$295",
+                  "typeString": "contract Submission"
+                }
+              },
+              "id": 4,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "83:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage_ptr",
+                "typeString": "contract Submission[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 28,
+              "nodeType": "Block",
+              "src": "188:125:0",
+              "statements": [
+                {
+                  "assignments": [
+                    13
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13,
+                      "name": "newSubmission",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 28,
+                      "src": "198:24:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Submission_$295",
+                        "typeString": "contract Submission"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 12,
+                        "name": "Submission",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 295,
+                        "src": "198:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Submission_$295",
+                          "typeString": "contract Submission"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 21,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 16,
+                        "name": "prop1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7,
+                        "src": "240:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 17,
+                        "name": "prop2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9,
+                        "src": "247:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 18,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 310,
+                          "src": "254:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 19,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "254:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 15,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "225:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_address_$returns$_t_contract$_Submission_$295_$",
+                        "typeString": "function (string memory,string memory,address) returns (contract Submission)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 14,
+                        "name": "Submission",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 295,
+                        "src": "229:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Submission_$295",
+                          "typeString": "contract Submission"
+                        }
+                      }
+                    },
+                    "id": 20,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "225:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Submission_$295",
+                      "typeString": "contract Submission"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "198:67:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 25,
+                        "name": "newSubmission",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13,
+                        "src": "292:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Submission_$295",
+                          "typeString": "contract Submission"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Submission_$295",
+                          "typeString": "contract Submission"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 22,
+                        "name": "submissions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5,
+                        "src": "275:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+                          "typeString": "contract Submission[] storage ref"
+                        }
+                      },
+                      "id": 24,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "275:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Submission_$295_$returns$_t_uint256_$",
+                        "typeString": "function (contract Submission) returns (uint256)"
+                      }
+                    },
+                    "id": 26,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "275:31:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 27,
+                  "nodeType": "ExpressionStatement",
+                  "src": "275:31:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 29,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createSubmission",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7,
+                  "name": "prop1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "140:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9,
+                  "name": "prop2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "161:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 8,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "161:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "139:42:0"
+            },
+            "returnParameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "188:0:0"
+            },
+            "scope": 78,
+            "src": "114:199:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 76,
+              "nodeType": "Block",
+              "src": "591:533:0",
+              "statements": [
+                {
+                  "body": {
+                    "id": 70,
+                    "nodeType": "Block",
+                    "src": "818:181:0",
+                    "statements": [
+                      {
+                        "assignments": [
+                          48
+                        ],
+                        "declarations": [
+                          {
+                            "constant": false,
+                            "id": 48,
+                            "name": "prop",
+                            "nodeType": "VariableDeclaration",
+                            "scope": 70,
+                            "src": "832:10:0",
+                            "stateVariable": false,
+                            "storageLocation": "default",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            },
+                            "typeName": {
+                              "id": 47,
+                              "name": "uint8",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "832:5:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint8",
+                                "typeString": "uint8"
+                              }
+                            },
+                            "value": null,
+                            "visibility": "internal"
+                          }
+                        ],
+                        "id": 58,
+                        "initialValue": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 55,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 310,
+                                "src": "888:3:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 56,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "888:10:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "baseExpression": {
+                                    "argumentTypes": null,
+                                    "id": 50,
+                                    "name": "submissions",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 5,
+                                    "src": "856:11:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+                                      "typeString": "contract Submission[] storage ref"
+                                    }
+                                  },
+                                  "id": 52,
+                                  "indexExpression": {
+                                    "argumentTypes": null,
+                                    "id": 51,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 37,
+                                    "src": "868:1:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "856:14:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_Submission_$295",
+                                    "typeString": "contract Submission"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_contract$_Submission_$295",
+                                    "typeString": "contract Submission"
+                                  }
+                                ],
+                                "id": 49,
+                                "name": "Submission",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 295,
+                                "src": "845:10:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_Submission_$295_$",
+                                  "typeString": "type(contract Submission)"
+                                }
+                              },
+                              "id": 53,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "845:26:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Submission_$295",
+                                "typeString": "contract Submission"
+                              }
+                            },
+                            "id": 54,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "getValidPropNum",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 198,
+                            "src": "845:42:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint8_$",
+                              "typeString": "function (address) view external returns (uint8)"
+                            }
+                          },
+                          "id": 57,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "845:54:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "nodeType": "VariableDeclarationStatement",
+                        "src": "832:67:0"
+                      },
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "id": 61,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 59,
+                            "name": "prop",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 48,
+                            "src": "917:4:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "!=",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 60,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "925:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "917:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": null,
+                        "id": 69,
+                        "nodeType": "IfStatement",
+                        "src": "914:75:0",
+                        "trueBody": {
+                          "id": 68,
+                          "nodeType": "Block",
+                          "src": "927:62:0",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "components": [
+                                  {
+                                    "argumentTypes": null,
+                                    "baseExpression": {
+                                      "argumentTypes": null,
+                                      "id": 62,
+                                      "name": "submissions",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 5,
+                                      "src": "953:11:0",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+                                        "typeString": "contract Submission[] storage ref"
+                                      }
+                                    },
+                                    "id": 64,
+                                    "indexExpression": {
+                                      "argumentTypes": null,
+                                      "id": 63,
+                                      "name": "i",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 37,
+                                      "src": "965:1:0",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                      }
+                                    },
+                                    "isConstant": false,
+                                    "isLValue": true,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "nodeType": "IndexAccess",
+                                    "src": "953:14:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_Submission_$295",
+                                      "typeString": "contract Submission"
+                                    }
+                                  },
+                                  {
+                                    "argumentTypes": null,
+                                    "id": 65,
+                                    "name": "prop",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 48,
+                                    "src": "969:4:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint8",
+                                      "typeString": "uint8"
+                                    }
+                                  }
+                                ],
+                                "id": 66,
+                                "isConstant": false,
+                                "isInlineArray": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "TupleExpression",
+                                "src": "952:22:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_tuple$_t_contract$_Submission_$295_$_t_uint8_$",
+                                  "typeString": "tuple(contract Submission,uint8)"
+                                }
+                              },
+                              "functionReturnParameters": 35,
+                              "id": 67,
+                              "nodeType": "Return",
+                              "src": "945:29:0"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 40,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 37,
+                      "src": "790:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 41,
+                        "name": "submissions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5,
+                        "src": "794:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+                          "typeString": "contract Submission[] storage ref"
+                        }
+                      },
+                      "id": 42,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "794:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "790:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 71,
+                  "initializationExpression": {
+                    "assignments": [
+                      37
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 37,
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 71,
+                        "src": "778:6:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 36,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "778:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 39,
+                    "initialValue": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 38,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "787:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "778:10:0"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 45,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "814:3:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 44,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 37,
+                        "src": "814:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 46,
+                    "nodeType": "ExpressionStatement",
+                    "src": "814:3:0"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "773:226:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f2076616c69642070726f706f736974696f6e206578697374732e",
+                        "id": 73,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1015:30:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_5fa95b31a786f05b74257a60a2f8198c1487d97105ad0e164ee864d1ed00661f",
+                          "typeString": "literal_string \"No valid proposition exists.\""
+                        },
+                        "value": "No valid proposition exists."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_5fa95b31a786f05b74257a60a2f8198c1487d97105ad0e164ee864d1ed00661f",
+                          "typeString": "literal_string \"No valid proposition exists.\""
+                        }
+                      ],
+                      "id": 72,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        315,
+                        316
+                      ],
+                      "referencedDeclaration": 316,
+                      "src": "1008:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 74,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1008:38:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 75,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1008:38:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 77,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPropNum",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "549:2:0"
+            },
+            "returnParameters": {
+              "id": 35,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "572:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Submission_$295",
+                    "typeString": "contract Submission"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 31,
+                    "name": "Submission",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 295,
+                    "src": "572:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Submission_$295",
+                      "typeString": "contract Submission"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "584:5:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 33,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "584:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "571:19:0"
+            },
+            "scope": 78,
+            "src": "530:594:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 79,
+        "src": "62:1065:0"
+      }
+    ],
+    "src": "0:1127:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/isabellewei/th/contracts/Hello.sol",
+    "exportedSymbols": {
+      "Hello": [
+        78
+      ]
+    },
+    "id": 79,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:0"
+      },
+      {
+        "absolutePath": "/Users/isabellewei/th/contracts/Submission.sol",
+        "file": "./Submission.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 79,
+        "sourceUnit": 296,
+        "src": "34:26:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          295
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 78,
+        "linearizedBaseContracts": [
+          78
+        ],
+        "name": "Hello",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5,
+            "name": "submissions",
+            "nodeType": "VariableDeclaration",
+            "scope": 78,
+            "src": "83:24:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+              "typeString": "contract Submission[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 3,
+                "name": "Submission",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 295,
+                "src": "83:10:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Submission_$295",
+                  "typeString": "contract Submission"
+                }
+              },
+              "id": 4,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "83:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage_ptr",
+                "typeString": "contract Submission[]"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 28,
+              "nodeType": "Block",
+              "src": "188:125:0",
+              "statements": [
+                {
+                  "assignments": [
+                    13
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13,
+                      "name": "newSubmission",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 28,
+                      "src": "198:24:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Submission_$295",
+                        "typeString": "contract Submission"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 12,
+                        "name": "Submission",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 295,
+                        "src": "198:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Submission_$295",
+                          "typeString": "contract Submission"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 21,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 16,
+                        "name": "prop1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7,
+                        "src": "240:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 17,
+                        "name": "prop2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 9,
+                        "src": "247:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 18,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 310,
+                          "src": "254:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 19,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "254:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 15,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "225:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_address_$returns$_t_contract$_Submission_$295_$",
+                        "typeString": "function (string memory,string memory,address) returns (contract Submission)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 14,
+                        "name": "Submission",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 295,
+                        "src": "229:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Submission_$295",
+                          "typeString": "contract Submission"
+                        }
+                      }
+                    },
+                    "id": 20,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "225:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Submission_$295",
+                      "typeString": "contract Submission"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "198:67:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 25,
+                        "name": "newSubmission",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13,
+                        "src": "292:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Submission_$295",
+                          "typeString": "contract Submission"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Submission_$295",
+                          "typeString": "contract Submission"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 22,
+                        "name": "submissions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5,
+                        "src": "275:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+                          "typeString": "contract Submission[] storage ref"
+                        }
+                      },
+                      "id": 24,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "275:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Submission_$295_$returns$_t_uint256_$",
+                        "typeString": "function (contract Submission) returns (uint256)"
+                      }
+                    },
+                    "id": 26,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "275:31:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 27,
+                  "nodeType": "ExpressionStatement",
+                  "src": "275:31:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 29,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createSubmission",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7,
+                  "name": "prop1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "140:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9,
+                  "name": "prop2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 29,
+                  "src": "161:19:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 8,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "161:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "139:42:0"
+            },
+            "returnParameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "188:0:0"
+            },
+            "scope": 78,
+            "src": "114:199:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 76,
+              "nodeType": "Block",
+              "src": "591:533:0",
+              "statements": [
+                {
+                  "body": {
+                    "id": 70,
+                    "nodeType": "Block",
+                    "src": "818:181:0",
+                    "statements": [
+                      {
+                        "assignments": [
+                          48
+                        ],
+                        "declarations": [
+                          {
+                            "constant": false,
+                            "id": 48,
+                            "name": "prop",
+                            "nodeType": "VariableDeclaration",
+                            "scope": 70,
+                            "src": "832:10:0",
+                            "stateVariable": false,
+                            "storageLocation": "default",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            },
+                            "typeName": {
+                              "id": 47,
+                              "name": "uint8",
+                              "nodeType": "ElementaryTypeName",
+                              "src": "832:5:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint8",
+                                "typeString": "uint8"
+                              }
+                            },
+                            "value": null,
+                            "visibility": "internal"
+                          }
+                        ],
+                        "id": 58,
+                        "initialValue": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 55,
+                                "name": "msg",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 310,
+                                "src": "888:3:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_magic_message",
+                                  "typeString": "msg"
+                                }
+                              },
+                              "id": 56,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "sender",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": null,
+                              "src": "888:10:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address_payable",
+                                "typeString": "address payable"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "baseExpression": {
+                                    "argumentTypes": null,
+                                    "id": 50,
+                                    "name": "submissions",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 5,
+                                    "src": "856:11:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+                                      "typeString": "contract Submission[] storage ref"
+                                    }
+                                  },
+                                  "id": 52,
+                                  "indexExpression": {
+                                    "argumentTypes": null,
+                                    "id": 51,
+                                    "name": "i",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 37,
+                                    "src": "868:1:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "IndexAccess",
+                                  "src": "856:14:0",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_Submission_$295",
+                                    "typeString": "contract Submission"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_contract$_Submission_$295",
+                                    "typeString": "contract Submission"
+                                  }
+                                ],
+                                "id": 49,
+                                "name": "Submission",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 295,
+                                "src": "845:10:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_Submission_$295_$",
+                                  "typeString": "type(contract Submission)"
+                                }
+                              },
+                              "id": 53,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "845:26:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Submission_$295",
+                                "typeString": "contract Submission"
+                              }
+                            },
+                            "id": 54,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "getValidPropNum",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 198,
+                            "src": "845:42:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint8_$",
+                              "typeString": "function (address) view external returns (uint8)"
+                            }
+                          },
+                          "id": 57,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "845:54:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "nodeType": "VariableDeclarationStatement",
+                        "src": "832:67:0"
+                      },
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          },
+                          "id": 61,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 59,
+                            "name": "prop",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 48,
+                            "src": "917:4:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "!=",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 60,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "925:1:0",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "917:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": null,
+                        "id": 69,
+                        "nodeType": "IfStatement",
+                        "src": "914:75:0",
+                        "trueBody": {
+                          "id": 68,
+                          "nodeType": "Block",
+                          "src": "927:62:0",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "components": [
+                                  {
+                                    "argumentTypes": null,
+                                    "baseExpression": {
+                                      "argumentTypes": null,
+                                      "id": 62,
+                                      "name": "submissions",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 5,
+                                      "src": "953:11:0",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+                                        "typeString": "contract Submission[] storage ref"
+                                      }
+                                    },
+                                    "id": 64,
+                                    "indexExpression": {
+                                      "argumentTypes": null,
+                                      "id": 63,
+                                      "name": "i",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 37,
+                                      "src": "965:1:0",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                      }
+                                    },
+                                    "isConstant": false,
+                                    "isLValue": true,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "nodeType": "IndexAccess",
+                                    "src": "953:14:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_Submission_$295",
+                                      "typeString": "contract Submission"
+                                    }
+                                  },
+                                  {
+                                    "argumentTypes": null,
+                                    "id": 65,
+                                    "name": "prop",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 48,
+                                    "src": "969:4:0",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint8",
+                                      "typeString": "uint8"
+                                    }
+                                  }
+                                ],
+                                "id": 66,
+                                "isConstant": false,
+                                "isInlineArray": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "TupleExpression",
+                                "src": "952:22:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_tuple$_t_contract$_Submission_$295_$_t_uint8_$",
+                                  "typeString": "tuple(contract Submission,uint8)"
+                                }
+                              },
+                              "functionReturnParameters": 35,
+                              "id": 67,
+                              "nodeType": "Return",
+                              "src": "945:29:0"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 43,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 40,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 37,
+                      "src": "790:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 41,
+                        "name": "submissions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5,
+                        "src": "794:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Submission_$295_$dyn_storage",
+                          "typeString": "contract Submission[] storage ref"
+                        }
+                      },
+                      "id": 42,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "794:18:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "790:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 71,
+                  "initializationExpression": {
+                    "assignments": [
+                      37
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 37,
+                        "name": "i",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 71,
+                        "src": "778:6:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 36,
+                          "name": "uint",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "778:4:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 39,
+                    "initialValue": {
+                      "argumentTypes": null,
+                      "hexValue": "30",
+                      "id": 38,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "787:1:0",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_0_by_1",
+                        "typeString": "int_const 0"
+                      },
+                      "value": "0"
+                    },
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "778:10:0"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 45,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "814:3:0",
+                      "subExpression": {
+                        "argumentTypes": null,
+                        "id": 44,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 37,
+                        "src": "814:1:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 46,
+                    "nodeType": "ExpressionStatement",
+                    "src": "814:3:0"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "773:226:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f2076616c69642070726f706f736974696f6e206578697374732e",
+                        "id": 73,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1015:30:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_5fa95b31a786f05b74257a60a2f8198c1487d97105ad0e164ee864d1ed00661f",
+                          "typeString": "literal_string \"No valid proposition exists.\""
+                        },
+                        "value": "No valid proposition exists."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_5fa95b31a786f05b74257a60a2f8198c1487d97105ad0e164ee864d1ed00661f",
+                          "typeString": "literal_string \"No valid proposition exists.\""
+                        }
+                      ],
+                      "id": 72,
+                      "name": "revert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        315,
+                        316
+                      ],
+                      "referencedDeclaration": 316,
+                      "src": "1008:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory) pure"
+                      }
+                    },
+                    "id": 74,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1008:38:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 75,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1008:38:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 77,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPropNum",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 30,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "549:2:0"
+            },
+            "returnParameters": {
+              "id": 35,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "572:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Submission_$295",
+                    "typeString": "contract Submission"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 31,
+                    "name": "Submission",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 295,
+                    "src": "572:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Submission_$295",
+                      "typeString": "contract Submission"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 34,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 77,
+                  "src": "584:5:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 33,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "584:5:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "571:19:0"
+            },
+            "scope": 78,
+            "src": "530:594:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 79,
+        "src": "62:1065:0"
+      }
+    ],
+    "src": "0:1127:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xEffc90119Ff343B8015eD0ABC0c5A2da7b7F9f4d",
+      "transactionHash": "0x2ba064b8230aa2976844748b31615b8bb76ba103c7e6b3ca8fd7ec3e096aac5d"
+    }
+  },
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2020-02-28T00:30:05.988Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
