@@ -23,7 +23,7 @@ function App() {
   }
   
   return (
-    <div>
+    <div className="container">
       <p>Choose your role</p>
       <button onClick={handleVoterClick}>
         Voter

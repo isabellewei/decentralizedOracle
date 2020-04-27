@@ -15,6 +15,7 @@ const HelloContract = new web3.eth.Contract(HelloAbi, contractAddress);
 function Voter() {
   const [prop1, setProp1] = useState('');
   const [prop2, setProp2] = useState('');
+  const [duration, setDuration] = useState('');
   const [showForm, setShowForm] = useState(true)
 
   const setSubmission = async e => {
@@ -43,10 +44,10 @@ function Voter() {
   }   
 
   return (
-    <div>   
+    <div className="container">   
       {showForm ? 
         <form onSubmit={setSubmission}>
-          <label>
+          <label className="column">
             Proposition 1:
             <input
               type="text"
@@ -64,11 +65,21 @@ function Voter() {
               onChange={e => setProp2(e.target.value)}
             />
           </label>
+          <label>
+            Duration (mins):
+            <input
+              type="number"
+              name="duration"
+              value={duration}
+              onChange={e => setDuration(e.target.value)}
+            />
+          </label>
           <input type="submit" value="Create Submission" />
         </form>
       :
         <button onClick={formAgain}>Create another submission</button>
       }
+      <p></p>
       <button onClick={goBack}>Return to Home</button>
     </div>
   );

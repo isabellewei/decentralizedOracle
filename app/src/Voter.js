@@ -61,11 +61,11 @@ function goBack(e) {
   }
 
   return (
-    <div> 
+    <div className="container"> 
       {showError ? <p>Sorry, there are no propositions available for you to vote on.</p> :
         (showProp ?
-          <div>
-            <p>{prop}</p> 
+          <div className="row">
+            <p>"{prop}"</p> 
             <p>Select your vote</p>
             <button onClick={(e) => castVote(e, true)}>True</button>
             <button onClick={(e) => castVote(e, false)}>False</button>

@@ -2,6 +2,7 @@ pragma solidity >=0.4.21 <0.7.0;
 
 contract Submission {
     address submitter;
+    address mainContract;
     struct Vote {
         bool vote;
         bool exists;
@@ -10,19 +11,31 @@ contract Submission {
         uint8 num;
         string question;
         mapping(address => Vote) votes;
+        address[] voters;
+        uint trueVotes;
     }
-    Proposition prop1;
-    Proposition prop2;
-    uint duration; //in minutes
-    
+    Proposition internal prop1;
+    Proposition internal prop2;
+    uint public closeTime; //in minutes
+    uint constant voterBond = 5 finney;
+    uint constant submitterBond = 5 finney;
+    uint bounty;
 
-    constructor(string memory _prop1, string memory _prop2, address _submitter, uint _duration) public{
+    enum Status {SUCCESS, FAIL, VOID}
+    Status closedStatus;
+
+    constructor(string memory _prop1, string memory _prop2, address _submitter, uint _duration) public payable{
         // Do not set the proposition numbers to be 0 or to be the same
-        prop1 = Proposition(1, _prop1);
-        prop2 = Proposition(2, _prop2);
+        prop1.num = 1;
+        prop1.question = _prop1;
+        prop1.trueVotes = 0;
+        prop2.num = 2;
+        prop2.question = _prop2;
+        prop2.trueVotes = 0;
         submitter = _submitter;
-        duration = _duration;
-		// TODO: Take bond +bounty out of submitter’s account
+        mainContract = msg.sender;
+        closeTime = now + _duration;
+        bounty = msg.value - submitterBond;
     }
 
     function getValidPropNum(address voter) public view returns(uint8){
@@ -44,28 +57,83 @@ contract Submission {
         }
     }
 
-    function vote(uint8 prop, bool ans) public{
+    function vote(uint8 prop, bool ans) public payable{
         require(prop==prop1.num || prop == prop2.num, "This is not a valid proposition number");
+        require(msg.value > voterBond, "You need to provide a bond");
         
         if(prop == prop1.num){
             prop1.votes[msg.sender] = Vote(ans, true);
+            prop1.voters.push(msg.sender);
+            if(ans){
+                prop1.trueVotes ++;
+            }
         } else if(prop == prop2.num){
             prop2.votes[msg.sender] = Vote(ans, true);
+            prop2.voters.push(msg.sender);
+            if(ans){
+                prop2.trueVotes ++;
+            }
         }
-        // take bond out of voter account
     }
 
-    // Async function closeSubmission(){
-    //     Use a scheduler so that the smart contract proactively executes this 
-    //     event at the end of the duration
+    function closeSubmission() external{
+        bool prop1Res = (prop1.trueVotes/prop1.voters.length)*2 > 1;
+        bool prop2Res = (prop2.trueVotes/prop2.voters.length)*2 > 1;
+        bool propTie = (prop1.trueVotes/prop1.voters.length)*2 == 1 || (prop2.trueVotes/prop2.voters.length)*2 == 1;
+        bool enoughVotes = (prop1.voters.length > 20)&&(prop2.voters.length > 20);
+        uint i;
 
-    //     require(converged answers of prop1 and prop2 are opposite)
-    //     require(enough votes for both propositions)
+        if(propTie || !enoughVotes){
+            closedStatus = Status.VOID;
+            for(i = 0; i<prop1.voters.length; i++) {
+                prop1.voters[i].call.value(voterBond)("");
+            }
+            for(i = 0; i<prop2.voters.length; i++) {
+                prop2.voters[i].call.value(voterBond)("");
+            }
+            submitter.call.value(bounty+submitterBond)("");
+        }else if(prop1Res!=prop2Res){
+            closedStatus = Status.SUCCESS;
+            uint totalGoodVotes = 0;
+            if(prop1Res){
+                totalGoodVotes += prop1.trueVotes;
+            }else{
+                totalGoodVotes += prop1.voters.length - prop1.trueVotes;
+            }
+            if(prop2Res){
+                totalGoodVotes += prop2.trueVotes;
+            }else{
+                totalGoodVotes += prop2.voters.length - prop2.trueVotes;
+            }
+            uint reward = bounty / totalGoodVotes;
 
-    //     Return bond to submitter if requirements are met
-    //     Reward voters in agreement and penalize voters in disagreement with majority
-    //     Send results of submission to web app to be saved for the Submission History
-    //     Remove this submission from list of active submissions
-    // }
+            for(i = 0; i<prop1.voters.length; i++) {
+                if(prop1.votes[prop1.voters[i]].vote==prop1Res){
+                    prop1.voters[i].call.value(reward+voterBond)("");
+                } else if(reward < voterBond){
+                    prop1.voters[i].call.value(voterBond-reward)("");
+                }
+            }
+            for(i = 0; i<prop2.voters.length; i++) {
+                if(prop2.votes[prop2.voters[i]].vote==prop2Res){
+                    prop2.voters[i].call.value(reward+voterBond)("");
+                }else if(reward < voterBond){
+                    prop2.voters[i].call.value(voterBond-reward)("");
+                }
+            }
+                submitter.call.value(submitterBond)("");
+                mainContract.call.value(address(this).balance)("");
+        }else{
+            closedStatus = Status.FAIL;
+            for(i = 0; i<prop1.voters.length; i++) {
+                prop1.voters[i].call.value(voterBond)("");
+            }
+            for(i = 0; i<prop2.voters.length; i++) {
+                prop2.voters[i].call.value(voterBond)("");
+            }
+            submitter.call.value(bounty)("");
+            mainContract.call.value(address(this).balance)("");
+        }
+    }
 
 }

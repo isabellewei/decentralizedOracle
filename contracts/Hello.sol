@@ -4,22 +4,38 @@ import "./Submission.sol";
 
 contract Hello {
     Submission[] submissions;
-    uint bounty;
-    uint bond;
+    Submission[] closedSubs;
+    uint constant bondBounty = 20 finney; //bond=5, minimum bounty=15
 
-    constructor() public{
-        bond = 10;
+    function closeSubmissions() private{
+        uint i = 0;
+        while(i < submissions.length){
+            Submission sub = Submission(submissions[i]);
+            uint close = sub.closeTime();
+
+            if(close * (1 minutes) >= now){
+                sub.closeSubmission();
+                closedSubs.push(submissions[i]);
+                submissions[i] = submissions[submissions.length - 1];
+                delete submissions[submissions.length - 1];
+                submissions.length--;
+                i--;
+  
+            }
+            i++;
+        }
     }
 
     function createSubmission(string memory prop1, string memory prop2, uint duration) public payable{
-        require(msg.value > bond, "You need to provide a bond and bounty");
-        bounty = msg.value - bond;
-        Submission newSubmission = new Submission(prop1, prop2, msg.sender, duration);
+        closeSubmissions();
+        require(msg.value > bondBounty, "You need to provide a bond and bounty");
+        Submission newSubmission = (new Submission).value(msg.value)(prop1, prop2, msg.sender, duration);
         submissions.push(newSubmission);
-        address(newSubmission).transfer(msg.value);
+        address(newSubmission).call.value(msg.value)("");
     } 
 
-    function getPropNum() public view returns(Submission, uint8) {
+    function getPropNum() public returns(Submission, uint8) {
+        closeSubmissions();
         // take bond value??
         // Using address of user, pick a random proposition they have not yet voted for
         // Return error if no such proposition exists
@@ -32,6 +48,10 @@ contract Hello {
             }
         }
         revert("No valid proposition exists.");
+    }
+
+    function() external payable { 
+      // fallback function to receive all payments
     }
 
 }
